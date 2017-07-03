@@ -25,7 +25,6 @@ library(plyr)
 
 # Step 1
 # Merge the training and test sets to create one data set
-###############################################################################
 
 x_train <- read.table("./UCI HAR Dataset/train/X_train.txt")
 
@@ -63,7 +62,6 @@ names(x_data) <- features[mean_and_std_features, 2]
 
 # Step 3
 # Use descriptive activity names to name the activities in the data set
-###############################################################################
 
 activities <- read.table("./UCI HAR Dataset/activity_labels.txt")
 
@@ -75,7 +73,6 @@ names(y_data) <- "activity"
 
 # Step 4
 # Appropriately label the data set with descriptive variable names
-###############################################################################
 
 # correct column name
 names(subject_data) <- "subject"
@@ -84,10 +81,8 @@ names(subject_data) <- "subject"
 all_data <- cbind(x_data, y_data, subject_data)
 
 # Step 5
-# Create a second, independent tidy data set with the average of each variable
+# Create independent tidy data set with the average of each variable
 # for each activity and each subject
-###############################################################################
-
 # 66 <- 68 columns but last two (activity & subject)
 finaloutput <- ddply(all_data, .(subject, activity), function(x) colMeans(x[, 1:66]))
 
