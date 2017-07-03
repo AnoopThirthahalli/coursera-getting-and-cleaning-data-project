@@ -16,4 +16,4 @@ The R script, `run_analysis.R`, does the following:
 6. Creates a tidy dataset that consists of the average (mean) value of each
    variable for each subject and activity pair.
 
-The end result is shown in the file `averages_data.txt`.
+The end result is shown in the file `finaloutput.txt`.
